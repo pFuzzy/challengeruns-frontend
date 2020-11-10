@@ -9,15 +9,18 @@ export const Header = styled.div`
 
 export const Title = styled.div`
   position: absolute;
-  left: 20vw;
-  width: 60vw;
-  height: 15vh;
-  padding-top: 5vh;
+  margin-top: 5vh;
+  left: 35.5vw;
+  width: 29vw;
+  height: 70px;
   text-align: center;
   font-size: 70px;
   font-style: italic;
   font-weight: bold;
   color: #f2eddf;
+  &:hover {
+    color: #a27b60;
+  }
 `;
 
 export const Navleft = styled.div`
@@ -37,10 +40,15 @@ export const Navright = styled.div`
 export const Navbutton = styled.div`
   text-align: center;
   font-size: 35px;
-  width: 20vw;
-  height: 12vh;
-  padding-top: 8vh;
+  margin-left: 1.5vw;
+  margin-right: 1.5vw;
+  width: 7vw;
+  height: 35px;
+  margin-top: 8vh;
   font-style: italic;
   font-weight: bold;
   color: #f2eddf;
+  &:hover {
+    color: #a27b60;
+  }
 `;
