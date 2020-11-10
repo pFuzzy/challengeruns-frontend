@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Background = styled.div`
+  font-family: Georgia, 'Times New Roman', Times, serif;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
