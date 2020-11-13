@@ -14,7 +14,7 @@ export const Title = styled.div`
   width: 29vw;
   height: 70px;
   text-align: center;
-  font-size: 70px;
+  font-size: 10vh;
   font-style: italic;
   font-weight: bold;
   color: #f2eddf;
@@ -39,7 +39,7 @@ export const Navright = styled.div`
 
 export const Navbutton = styled.div`
   text-align: center;
-  font-size: 35px;
+  font-size: 4vh;
   margin-left: 1.5vw;
   margin-right: 1.5vw;
   width: 7vw;

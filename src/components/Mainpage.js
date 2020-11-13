@@ -1,7 +1,19 @@
 import React from 'react';
-import Content from '../styled-components/Content';
+import {
+  Content,
+  Contentnav,
+  Contentbutton,
+} from '../styled-components/Content';
 
 const Mainpage = () => {
-  return <Content></Content>;
+  return (
+    <Content>
+      <Contentnav>
+        <Contentbutton>Games</Contentbutton>
+        <Contentbutton>Categories</Contentbutton>
+        <Contentbutton>Leaderboards</Contentbutton>
+      </Contentnav>
+    </Content>
+  );
 };
 export default Mainpage;
