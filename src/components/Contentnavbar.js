@@ -14,17 +14,23 @@ const Contentnavbar = () => {
       {currentPage === 'games' ? (
         <Selectedcontent>Games</Selectedcontent>
       ) : (
-        <Contentbutton to='games'>Games</Contentbutton>
+        <Contentbutton to='games' draggable={false}>
+          Games
+        </Contentbutton>
       )}
       {currentPage === 'categories' ? (
         <Selectedcontent>Categories</Selectedcontent>
       ) : (
-        <Contentbutton to='categories'>Categories</Contentbutton>
+        <Contentbutton to='categories' draggable={false}>
+          Categories
+        </Contentbutton>
       )}
       {currentPage === 'leaderboards' ? (
         <Selectedcontent>Leaderboards</Selectedcontent>
       ) : (
-        <Contentbutton to='leaderboards'>Leaderboards</Contentbutton>
+        <Contentbutton to='leaderboards' draggable={false}>
+          Leaderboards
+        </Contentbutton>
       )}
     </Contentnav>
   );
