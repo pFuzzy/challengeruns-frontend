@@ -11,13 +11,23 @@ const Navbar = () => {
   return (
     <Header>
       <Navleft>
-        <Navbutton>News</Navbutton>
-        <Navbutton>Forum</Navbutton>
+        <Navbutton to='/news' draggable={false}>
+          News
+        </Navbutton>
+        <Navbutton to='/forum' draggable={false}>
+          Forum
+        </Navbutton>
       </Navleft>
-      <Title>ChallengeRuns</Title>
+      <Title to='/' draggable={false}>
+        ChallengeRuns
+      </Title>
       <Navright>
-        <Navbutton>Register</Navbutton>
-        <Navbutton>Sign in</Navbutton>
+        <Navbutton to='/register' draggable={false}>
+          Register
+        </Navbutton>
+        <Navbutton to='/login' draggable={false}>
+          Sign in
+        </Navbutton>
       </Navright>
     </Header>
   );
