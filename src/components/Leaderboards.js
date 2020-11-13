@@ -2,7 +2,7 @@ import React from 'react';
 import { Content } from '../styled-components/Content';
 import Contentnavbar from './Contentnavbar';
 
-const Games = () => {
+const Leaderboards = () => {
   return (
     <Content>
       <Contentnavbar />
@@ -10,4 +10,4 @@ const Games = () => {
   );
 };
 
-export default Games;
+export default Leaderboards;

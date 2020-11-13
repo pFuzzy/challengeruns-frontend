@@ -28,3 +28,14 @@ export const Contentbutton = styled(Link)`
     color: #f2eddf;
   }
 `;
+
+export const Selectedcontent = styled.div`
+  text-decoration: none;
+  width: 20vw;
+  height: 5vh;
+  text-align: center;
+  color: #f2eddf;
+  background-color: #755139;
+  font-size: 4vh;
+  border: 1px solid #755139;
+`;
