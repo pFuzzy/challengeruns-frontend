@@ -11,13 +11,13 @@ const Navbar = () => {
   return (
     <Header>
       <Navleft>
-        <Navbutton>News</Navbutton>
-        <Navbutton>Forum</Navbutton>
+        <Navbutton to='/news'>News</Navbutton>
+        <Navbutton to='/forum'>Forum</Navbutton>
       </Navleft>
-      <Title>ChallengeRuns</Title>
+      <Title to='/'>ChallengeRuns</Title>
       <Navright>
-        <Navbutton>Register</Navbutton>
-        <Navbutton>Sign in</Navbutton>
+        <Navbutton to='/register'>Register</Navbutton>
+        <Navbutton to='/login'>Sign in</Navbutton>
       </Navright>
     </Header>
   );

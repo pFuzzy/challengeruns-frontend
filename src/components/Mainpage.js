@@ -9,9 +9,9 @@ const Mainpage = () => {
   return (
     <Content>
       <Contentnav>
-        <Contentbutton>Games</Contentbutton>
-        <Contentbutton>Categories</Contentbutton>
-        <Contentbutton>Leaderboards</Contentbutton>
+        <Contentbutton to='/games'>Games</Contentbutton>
+        <Contentbutton to='/categories'>Categories</Contentbutton>
+        <Contentbutton to='/leaderboards'>Leaderboards</Contentbutton>
       </Contentnav>
     </Content>
   );

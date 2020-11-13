@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Content = styled.div`
   position: absolute;
@@ -14,7 +15,8 @@ export const Contentnav = styled.div`
   height: 5vh;
 `;
 
-export const Contentbutton = styled.div`
+export const Contentbutton = styled(Link)`
+  text-decoration: none;
   width: 20vw;
   height: 5vh;
   text-align: center;

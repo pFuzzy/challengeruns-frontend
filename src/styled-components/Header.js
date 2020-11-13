@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Header = styled.div`
   display: flex;
@@ -7,7 +8,8 @@ export const Header = styled.div`
   background-color: #755139;
 `;
 
-export const Title = styled.div`
+export const Title = styled(Link)`
+  text-decoration: none;
   position: absolute;
   margin-top: 5vh;
   left: 35.5vw;
@@ -37,7 +39,8 @@ export const Navright = styled.div`
   display: flex;
 `;
 
-export const Navbutton = styled.div`
+export const Navbutton = styled(Link)`
+  text-decoration: none;
   text-align: center;
   font-size: 4vh;
   margin-left: 1.5vw;
