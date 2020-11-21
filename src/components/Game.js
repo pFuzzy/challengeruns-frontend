@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Content } from '../styled-components/Content';
 import axios from 'axios';
+import Run from './Run';
 
 const Game = (props) => {
   const [category, setCategory] = useState('');
@@ -30,7 +31,7 @@ const Game = (props) => {
         </div>
         {game.runs.map((run) => {
           if (run.category === category) {
-            return <div id={run.id}>{run.name}</div>;
+            return <Run run={run} />;
           } else {
             return null;
           }
