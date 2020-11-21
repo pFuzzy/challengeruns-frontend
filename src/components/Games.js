@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Content } from '../styled-components/Content';
+import { Content, Gamelink } from '../styled-components/Content';
 import Contentnavbar from './Contentnavbar';
 import axios from 'axios';
 
@@ -10,12 +10,22 @@ const Games = () => {
       setGames(res.data);
     });
   }, []);
+
+  const generateUrlFromGameTitle = (title) => {
+    const splitTitle = title.toLowerCase().split(' ');
+    return 'games/' + splitTitle.join('-');
+  };
+
   console.log(games);
   return (
     <Content>
       <Contentnavbar />
       {games.map((game) => {
-        return <div>{game.title}</div>;
+        return (
+          <Gamelink to={generateUrlFromGameTitle(game.title)}>
+            {game.title}
+          </Gamelink>
+        );
       })}
     </Content>
   );

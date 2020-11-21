@@ -39,3 +39,5 @@ export const Selectedcontent = styled.div`
   font-size: 4vh;
   border: 1px solid #755139;
 `;
+
+export const Gamelink = styled(Link)``;
