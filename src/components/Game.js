@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Content } from '../styled-components/Content';
 import axios from 'axios';
 import Run from './Run';
+import {
+  Categorychoice,
+  Categorypick,
+  Gametitle,
+} from '../styled-components/GamePage';
 
 const Game = (props) => {
   const [category, setCategory] = useState('');
@@ -22,13 +27,16 @@ const Game = (props) => {
   } else {
     return (
       <Content>
-        <div>{game.title}</div>
-        <div onClick={changeCategory} id='NO_HIT'>
-          No hit
-        </div>
-        <div onClick={changeCategory} id='NO_DAMAGE'>
-          No damage
-        </div>
+        <Gametitle>{game.title}</Gametitle>
+        <Categorypick>
+          <Categorychoice onClick={changeCategory} id='NO_HIT'>
+            NO HIT
+          </Categorychoice>
+          <Categorychoice onClick={changeCategory} id='NO_DAMAGE'>
+            NO DAMAGE
+          </Categorychoice>
+        </Categorypick>
+
         {game.runs.map((run) => {
           if (run.category === category) {
             return <Run run={run} />;
