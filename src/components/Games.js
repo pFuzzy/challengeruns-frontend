@@ -22,7 +22,7 @@ const Games = () => {
       <Contentnavbar />
       {games.map((game) => {
         return (
-          <Gamelink to={generateUrlFromGameTitle(game.title)}>
+          <Gamelink to={generateUrlFromGameTitle(game.title)} game={game}>
             {game.title}
           </Gamelink>
         );
