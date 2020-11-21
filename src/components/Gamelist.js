@@ -11,18 +11,12 @@ const Games = () => {
     });
   }, []);
 
-  const generateUrlFromGameTitle = (title) => {
-    const splitTitle = title.toLowerCase().split(' ');
-    return 'games/' + splitTitle.join('-');
-  };
-
-  console.log(games);
   return (
     <Content>
       <Contentnavbar />
       {games.map((game) => {
         return (
-          <Gamelink to={generateUrlFromGameTitle(game.title)} game={game}>
+          <Gamelink key={game.id} to={'/games/' + game.id}>
             {game.title}
           </Gamelink>
         );
