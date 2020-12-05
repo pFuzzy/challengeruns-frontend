@@ -1,8 +1,8 @@
 import React from 'react';
 import {
   Contentbutton,
-  Contentnav,
   Selectedcontent,
+  Styledcontentnav,
 } from '../styled-components/Content';
 
 const Contentnavbar = () => {
@@ -10,7 +10,7 @@ const Contentnavbar = () => {
   const currentPage = currentUrl[currentUrl.length - 1];
 
   return (
-    <Contentnav>
+    <Styledcontentnav>
       {currentPage === 'games' ? (
         <Selectedcontent>Games</Selectedcontent>
       ) : (
@@ -32,7 +32,7 @@ const Contentnavbar = () => {
           Leaderboards
         </Contentbutton>
       )}
-    </Contentnav>
+    </Styledcontentnav>
   );
 };
 export default Contentnavbar;

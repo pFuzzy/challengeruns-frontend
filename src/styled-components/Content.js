@@ -9,7 +9,7 @@ export const Content = styled.div`
   height: 80vh;
 `;
 
-export const Contentnav = styled.div`
+export const Styledcontentnav = styled.div`
   display: flex;
   width: 60vw;
   height: 5vh;
