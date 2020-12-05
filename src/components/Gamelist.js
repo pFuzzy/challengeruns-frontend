@@ -16,7 +16,7 @@ const Games = () => {
       <Contentnavbar />
       {games.map((game) => {
         return (
-          <Gamelink key={game.id} to={'/games/' + game.id}>
+          <Gamelink draggable='false' key={game.id} to={'/games/' + game.id}>
             {game.title}
           </Gamelink>
         );

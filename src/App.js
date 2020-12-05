@@ -6,6 +6,7 @@ import Gamelist from './components/Gamelist';
 import Categories from './components/Categories';
 import Leaderboards from './components/Leaderboards';
 import Game from './components/Game';
+import Run from './components/Run';
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
         <Route exact path='/forum'></Route>
         <Route exact path='/register'></Route>
         <Route exact path='/login'></Route>
-        <Route exact path='/games/:id' component={Game} />
+        <Route exact path='/games/:gameId' component={Game} />
+        <Route exact path='/games/:gameId/:runId' component={Run} />
       </Background>
     </Router>
   );
