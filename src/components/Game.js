@@ -3,6 +3,7 @@ import { Content } from '../styled-components/Content';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {
+  BackToGames,
   GameTitle,
   StyledOption,
   StyledSelect,
@@ -48,7 +49,7 @@ const Game = (props) => {
             return <StyledOption key={run.id}>{run.category}</StyledOption>;
           })}
         </StyledSelect>
-        <Link to='/games'>Back to games</Link>
+        <BackToGames to='/games'>Back to games</BackToGames>
         {<h2>{category} runs</h2>}
         <ul>
           {game.runs.map((run) => {

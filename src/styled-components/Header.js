@@ -14,7 +14,7 @@ export const Title = styled(Link)`
   margin-top: 5vh;
   left: 35.5vw;
   width: 29vw;
-  height: 70px;
+  height: 3.75vh;
   text-align: center;
   font-size: 10vh;
   font-style: italic;
@@ -46,7 +46,7 @@ export const NavButton = styled(Link)`
   margin-left: 1.5vw;
   margin-right: 1.5vw;
   width: 7vw;
-  height: 35px;
+  height: 1.8vh;
   margin-top: 8vh;
   font-style: italic;
   font-weight: bold;
