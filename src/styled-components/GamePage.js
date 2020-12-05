@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Styledselect = styled.select``;
+
+export const Styledoption = styled.option``;
+
 export const Styledgamenav = styled.div`
   width: 60vw;
   border: 1px solid #755139;

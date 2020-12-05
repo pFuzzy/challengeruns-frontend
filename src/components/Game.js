@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Content } from '../styled-components/Content';
 import axios from 'axios';
-import Gamenavbar from './Gamenavbar';
 import { Link } from 'react-router-dom';
+import {
+  Gametitle,
+  Styledoption,
+  Styledselect,
+} from '../styled-components/GamePage';
 
 const Game = (props) => {
   const [game, setGame] = useState({});
   const [category, setCategory] = useState('All');
+  const categories = [];
 
   const gameId = props.match.params.gameId;
+
+  const changeCategory = (e) => {
+    setCategory(e.target.value);
+  };
 
   useEffect(() => {
     axios
@@ -21,11 +30,25 @@ const Game = (props) => {
   } else {
     return (
       <Content>
-        <Gamenavbar
-          gametitle={game.title}
-          runs={game.runs}
-          setCategory={setCategory}
-        />
+        <Gametitle>{game.title}</Gametitle>
+        <Styledselect
+          defaultValue={'default'}
+          id='selectCategory'
+          onChange={changeCategory}
+        >
+          <Styledoption disabled hidden value='default'>
+            Select categories
+          </Styledoption>
+          <Styledoption>All</Styledoption>
+          {game.runs.map((run) => {
+            if (run.category in categories) {
+              return null;
+            }
+            categories.push(run.category);
+            return <Styledoption key={run.id}>{run.category}</Styledoption>;
+          })}
+        </Styledselect>
+        <Link to='/games'>Back to games</Link>
         {<h2>{category} runs</h2>}
         <ul>
           {game.runs.map((run) => {
