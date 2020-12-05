@@ -2,7 +2,7 @@ import Navbar from './components/Navbar';
 import Background from './styled-components/Background';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Mainpage from './components/Mainpage';
-import Gamelist from './components/Gamelist';
+import GameList from './components/GameList';
 import Categories from './components/Categories';
 import Leaderboards from './components/Leaderboards';
 import Game from './components/Game';
@@ -17,7 +17,7 @@ function App() {
           <Mainpage />
         </Route>
         <Route exact path='/games'>
-          <Gamelist />
+          <GameList />
         </Route>
         <Route exact path='/leaderboards'>
           <Leaderboards />

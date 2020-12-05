@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Content, Gamelink } from '../styled-components/Content';
-import Contentnavbar from './Contentnavbar';
+import { Content, GameLink } from '../styled-components/Content';
+import ContentNavbar from './ContentNavbar';
 import axios from 'axios';
 
 const Games = () => {
@@ -13,12 +13,12 @@ const Games = () => {
 
   return (
     <Content>
-      <Contentnavbar />
+      <ContentNavbar />
       {games.map((game) => {
         return (
-          <Gamelink draggable='false' key={game.id} to={'/games/' + game.id}>
+          <GameLink draggable='false' key={game.id} to={'/games/' + game.id}>
             {game.title}
-          </Gamelink>
+          </GameLink>
         );
       })}
     </Content>

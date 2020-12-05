@@ -1,11 +1,11 @@
 import React from 'react';
 import { Content } from '../styled-components/Content';
-import Contentnavbar from './Contentnavbar';
+import ContentNavbar from './ContentNavbar';
 
 const Leaderboards = () => {
   return (
     <Content>
-      <Contentnavbar />
+      <ContentNavbar />
     </Content>
   );
 };

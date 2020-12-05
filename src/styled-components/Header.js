@@ -25,13 +25,13 @@ export const Title = styled(Link)`
   }
 `;
 
-export const Navleft = styled.div`
+export const NavLeft = styled.div`
   position: absolute;
   width: 20vw;
   display: flex;
 `;
 
-export const Navright = styled.div`
+export const NavRight = styled.div`
   position: absolute;
   right: 0;
   width: 20vw;
@@ -39,7 +39,7 @@ export const Navright = styled.div`
   display: flex;
 `;
 
-export const Navbutton = styled(Link)`
+export const NavButton = styled(Link)`
   text-decoration: none;
   text-align: center;
   font-size: 4vh;

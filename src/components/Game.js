@@ -3,9 +3,9 @@ import { Content } from '../styled-components/Content';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {
-  Gametitle,
-  Styledoption,
-  Styledselect,
+  GameTitle,
+  StyledOption,
+  StyledSelect,
 } from '../styled-components/GamePage';
 
 const Game = (props) => {
@@ -30,24 +30,24 @@ const Game = (props) => {
   } else {
     return (
       <Content>
-        <Gametitle>{game.title}</Gametitle>
-        <Styledselect
+        <GameTitle>{game.title}</GameTitle>
+        <StyledSelect
           defaultValue={'default'}
           id='selectCategory'
           onChange={changeCategory}
         >
-          <Styledoption disabled hidden value='default'>
+          <StyledOption disabled hidden value='default'>
             Select categories
-          </Styledoption>
-          <Styledoption>All</Styledoption>
+          </StyledOption>
+          <StyledOption>All</StyledOption>
           {game.runs.map((run) => {
             if (run.category in categories) {
               return null;
             }
             categories.push(run.category);
-            return <Styledoption key={run.id}>{run.category}</Styledoption>;
+            return <StyledOption key={run.id}>{run.category}</StyledOption>;
           })}
-        </Styledselect>
+        </StyledSelect>
         <Link to='/games'>Back to games</Link>
         {<h2>{category} runs</h2>}
         <ul>

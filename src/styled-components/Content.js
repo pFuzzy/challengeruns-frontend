@@ -9,13 +9,13 @@ export const Content = styled.div`
   height: 80vh;
 `;
 
-export const Styledcontentnav = styled.div`
+export const StyledContentNav = styled.div`
   display: flex;
   width: 60vw;
   height: 5vh;
 `;
 
-export const Contentbutton = styled(Link)`
+export const ContentButton = styled(Link)`
   text-decoration: none;
   width: 20vw;
   height: 5vh;
@@ -29,7 +29,7 @@ export const Contentbutton = styled(Link)`
   }
 `;
 
-export const Selectedcontent = styled.div`
+export const SelectedContent = styled.div`
   text-decoration: none;
   width: 20vw;
   height: 5vh;
@@ -40,7 +40,7 @@ export const Selectedcontent = styled.div`
   border: 1px solid #755139;
 `;
 
-export const Gamelink = styled(Link)`
+export const GameLink = styled(Link)`
   display: inline-block;
   width: 15vw;
   height: 5.5vw;
