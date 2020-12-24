@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const DefaultSplits = styled.div`
-  width: 40%;
+  width: 25vw;
   border: 1px solid black;
 `;
 
@@ -28,8 +28,9 @@ export const SelectedSplit = styled.div`
 
 export const AreaContainer = styled.div`
   display: flex;
-  width: 20vw;
-  margin-left: 15%;
+
+  margin-left: 6vw;
+  width: 25vw;
   border: 1px solid black;
   overflow-x: scroll;
   scroll-behavior: smooth;
@@ -44,12 +45,12 @@ export const RunContainer = styled.div`
 
 export const AreaCardStyle = styled.div`
   height: auto;
-  width: 30vw;
+  width: 25vw;
   border: 1px solid black;
 `;
 
 export const AreaName = styled.div`
-  width: 20vw;
+  width: 25vw;
   font-size: 2.5vh;
   font-weight: bold;
   color: #755139;
