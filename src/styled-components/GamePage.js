@@ -22,7 +22,7 @@ export const RunListHeader = styled.h1`
   font-size: 4vh;
 `;
 
-export const BackToGames = styled(Link)`
+export const BackButton = styled(Link)`
   position: absolute;
   font-size: 3vh;
   font-weight: bold;

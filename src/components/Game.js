@@ -3,7 +3,7 @@ import { Content, Footer } from '../styled-components/Content';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {
-  BackToGames,
+  BackButton,
   GameTitle,
   StyledOption,
   StyledSelect,
@@ -54,7 +54,7 @@ const Game = (props) => {
             );
           })}
         </StyledSelect>
-        <BackToGames to='/games'>Back to games</BackToGames>
+        <BackButton to='/games'>Back to games</BackButton>
         <RunListHeader>{category} runs</RunListHeader>
         <ul>
           {game.runs.map((run) => {
