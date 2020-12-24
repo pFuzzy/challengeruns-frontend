@@ -11,27 +11,25 @@ import Run from './components/Run';
 function App() {
   return (
     <Router>
-      <Background className='App'>
-        <Navbar />
-        <Route exact path='/'>
-          <Mainpage />
-        </Route>
-        <Route exact path='/games'>
-          <GameList />
-        </Route>
-        <Route exact path='/leaderboards'>
-          <Leaderboards />
-        </Route>
-        <Route exact path='/categories'>
-          <Categories />
-        </Route>
-        <Route exact path='/news'></Route>
-        <Route exact path='/forum'></Route>
-        <Route exact path='/register'></Route>
-        <Route exact path='/login'></Route>
-        <Route exact path='/games/:gameId' component={Game} />
-        <Route exact path='/games/:gameId/:runId' component={Run} />
-      </Background>
+      <Navbar />
+      <Route exact path='/'>
+        <Mainpage />
+      </Route>
+      <Route exact path='/games'>
+        <GameList />
+      </Route>
+      <Route exact path='/leaderboards'>
+        <Leaderboards />
+      </Route>
+      <Route exact path='/categories'>
+        <Categories />
+      </Route>
+      <Route exact path='/news'></Route>
+      <Route exact path='/forum'></Route>
+      <Route exact path='/register'></Route>
+      <Route exact path='/login'></Route>
+      <Route exact path='/games/:gameId' component={Game} />
+      <Route exact path='/games/:gameId/:runId' component={Run} />
     </Router>
   );
 }
