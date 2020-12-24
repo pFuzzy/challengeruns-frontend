@@ -1,5 +1,4 @@
 import Navbar from './components/Navbar';
-import Background from './styled-components/Background';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Mainpage from './components/Mainpage';
 import GameList from './components/GameList';

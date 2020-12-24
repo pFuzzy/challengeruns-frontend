@@ -32,12 +32,12 @@ export const BackButton = styled(Link)`
 `;
 
 export const GameTitle = styled.div`
-  width: 59.85vw;
+  width: 100%;
   height: 8vh;
   text-align: center;
   padding-top: 1vh;
   color: #755139;
   font-size: 6vh;
   font-weight: bold;
-  border: 1px solid #755139;
+  border-bottom: 1px solid #755139;
 `;
