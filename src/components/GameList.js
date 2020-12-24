@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Content, GameLink } from '../styled-components/Content';
+import { Content, Footer, GameLink } from '../styled-components/Content';
 import ContentNavbar from './ContentNavbar';
 import axios from 'axios';
 
@@ -21,6 +21,7 @@ const Games = () => {
           </GameLink>
         );
       })}
+      <Footer>Suggest a game here!</Footer>
     </Content>
   );
 };

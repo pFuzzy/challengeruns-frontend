@@ -9,12 +9,18 @@ export const StyledSelect = styled.select`
   font-size: 2.5vh;
   font-weight: bold;
   margin-left: 1vw;
-  margin-top: 0.5vh;
+  margin-top: 1vh;
   color: #755139;
   font-family: Georgia, 'Times New Roman', Times, serif;
 `;
 
 export const StyledOption = styled.option``;
+
+export const RunListHeader = styled.h1`
+  text-align: center;
+  color: #755139;
+  font-size: 4vh;
+`;
 
 export const BackToGames = styled(Link)`
   position: absolute;

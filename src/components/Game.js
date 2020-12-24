@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Content } from '../styled-components/Content';
+import { Content, Footer } from '../styled-components/Content';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {
@@ -7,6 +7,7 @@ import {
   GameTitle,
   StyledOption,
   StyledSelect,
+  RunListHeader,
 } from '../styled-components/GamePage';
 
 const Game = (props) => {
@@ -24,7 +25,7 @@ const Game = (props) => {
     axios
       .get(`http://localhost:8080/games/${gameId}`)
       .then((res) => setGame(res.data));
-  }, [gameId]);
+  }, [gameId, category]);
 
   if (game.id === undefined) {
     return null;
@@ -42,21 +43,29 @@ const Game = (props) => {
           </StyledOption>
           <StyledOption>All</StyledOption>
           {game.runs.map((run) => {
-            if (run.category in categories) {
+            if (categories.includes(run.category)) {
               return null;
             }
             categories.push(run.category);
-            return <StyledOption key={run.id}>{run.category}</StyledOption>;
+            return (
+              <StyledOption key={'runId:' + run.id}>
+                {run.category}
+              </StyledOption>
+            );
           })}
         </StyledSelect>
         <BackToGames to='/games'>Back to games</BackToGames>
-        {<h2>{category} runs</h2>}
+        <RunListHeader>{category} runs</RunListHeader>
         <ul>
           {game.runs.map((run) => {
             if (category === 'All' || run.category === category) {
               return (
-                <li key={run.name}>
-                  <Link to={'/games/' + gameId + '/' + run.id}>{run.name}</Link>
+                <li key={run.id}>
+                  <Link to={'/games/' + gameId + '/' + run.id}>
+                    {category !== 'All' && run.category === category
+                      ? run.name
+                      : run.category + ' ' + run.name}
+                  </Link>
                 </li>
               );
             } else {
@@ -64,6 +73,7 @@ const Game = (props) => {
             }
           })}
         </ul>
+        <Footer>Suggest a run here!</Footer>
       </Content>
     );
   }

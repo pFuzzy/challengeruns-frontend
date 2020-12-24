@@ -53,3 +53,11 @@ export const GameLink = styled(Link)`
     background: grey;
   }
 `;
+
+export const Footer = styled.div`
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 60vw;
+  font-size: 3vh;
+`;
