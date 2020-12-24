@@ -9,6 +9,7 @@ import {
   AreaContainer,
   RunContainer,
 } from '../styled-components/RunPageStyle';
+import AreaCard from './AreaCard';
 
 const Run = (props) => {
   const [run, setRun] = useState({});
@@ -21,8 +22,6 @@ const Run = (props) => {
       .get(`http://localhost:8080/runs/${runId}`)
       .then((res) => setRun(res.data));
   }, [runId, selectedSplit]);
-
-  useEffect(() => {}, [selectedSplit, areas]);
 
   const selectSplit = (e) => {
     for (let split of run.splits) {
@@ -54,9 +53,9 @@ const Run = (props) => {
               )
             )}
           </DefaultSplits>
-          <AreaContainer>
+          <AreaContainer className='areaContainer'>
             {areas.map((area) => {
-              return <div key={area.id}>{area.name}</div>;
+              return <AreaCard key={area.id} area={area} />;
             })}
           </AreaContainer>
         </RunContainer>

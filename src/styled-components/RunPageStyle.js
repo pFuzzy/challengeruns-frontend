@@ -27,13 +27,31 @@ export const SelectedSplit = styled.div`
 `;
 
 export const AreaContainer = styled.div`
-  width: 40%;
+  display: flex;
+  width: 20vw;
   margin-left: 15%;
   border: 1px solid black;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
 `;
 
 export const RunContainer = styled.div`
   display: flex;
   margin-top: 5vh;
   margin-left: 2vw;
+  height: auto;
+`;
+
+export const AreaCardStyle = styled.div`
+  height: auto;
+  width: 30vw;
+  border: 1px solid black;
+`;
+
+export const AreaName = styled.div`
+  width: 20vw;
+  font-size: 2.5vh;
+  font-weight: bold;
+  color: #755139;
+  text-align: center;
 `;
