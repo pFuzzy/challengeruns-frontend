@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Content } from '../styled-components/Content';
 import axios from 'axios';
 import { BackButton, GameTitle } from '../styled-components/GamePage';
-import styled from 'styled-components';
+import {
+  DefaultSplits,
+  Split,
+  SelectedSplit,
+} from '../styled-components/RunPageStyle';
 
 const Run = (props) => {
   const [run, setRun] = useState({});
@@ -19,34 +23,6 @@ const Run = (props) => {
     console.log(e.target.textContent);
     setSelectedSplit(e.target.textContent);
   };
-
-  const DefaultSplits = styled.div`
-    width: 40%;
-    margin-top: 5vh;
-    margin-left: 2vw;
-    border: 1px solid black;
-  `;
-
-  const Split = styled.div`
-    font-size: 3vh;
-    font-weight: bold;
-    font-style: italic;
-    color: #755139;
-    border: 1px solid black;
-    &:hover {
-      color: #f2eddf;
-      background-color: #755139;
-      cursor: pointer;
-    }
-  `;
-
-  const SelectedSplit = styled.div`
-    font-size: 3vh;
-    font-weight: bold;
-    font-style: italic;
-    color: #f2eddf;
-    background-color: #755139;
-  `;
 
   if (run.id === undefined) {
     return null;
