@@ -28,12 +28,14 @@ export const SelectedSplit = styled.div`
 
 export const AreaContainer = styled.div`
   display: flex;
-
-  margin-left: 6vw;
-  width: 25vw;
+  margin-left: 5vw;
+  width: 400px;
   border: 1px solid black;
   overflow-x: scroll;
   scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const RunContainer = styled.div`
@@ -43,16 +45,18 @@ export const RunContainer = styled.div`
   height: auto;
 `;
 
-export const AreaCardStyle = styled.div`
-  height: auto;
-  width: 25vw;
-  border: 1px solid black;
-`;
+export const AreaCardStyle = styled.div``;
 
 export const AreaName = styled.div`
-  width: 25vw;
+  width: 400px;
   font-size: 2.5vh;
   font-weight: bold;
   color: #755139;
   text-align: center;
+`;
+
+export const AreaInfo = styled.div``;
+
+export const AreaDetail = styled.div`
+  border: 1px solid black;
 `;

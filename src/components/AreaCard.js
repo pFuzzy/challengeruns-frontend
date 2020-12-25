@@ -1,17 +1,58 @@
 import React from 'react';
-import { AreaCardStyle, AreaName } from '../styled-components/RunPageStyle';
+import {
+  AreaCardStyle,
+  AreaDetail,
+  AreaInfo,
+  AreaName,
+} from '../styled-components/RunPageStyle';
 
 const AreaCard = (props) => {
-  console.log(props.area);
-
   return (
     <AreaCardStyle>
       <AreaName>{props.area.name}</AreaName>
-      <div>Levels to get</div>
-      <div>Enemies to kill</div>
-      <div>Items to pick up</div>
-      <div>Item upgrades</div>
-      <div>Extra tips</div>
+      <AreaInfo>
+        {props.area.acquiredLevels.length > 0 ? (
+          <AreaDetail>
+            Levels to get
+            {props.area.acquiredLevels.map((level) => {
+              return <div>{level}</div>;
+            })}
+          </AreaDetail>
+        ) : null}
+
+        {props.area.pickUps.length > 0 ? (
+          <AreaDetail>
+            Items to pick up
+            {props.area.pickUps.map((level) => {
+              return <div>{level}</div>;
+            })}
+          </AreaDetail>
+        ) : null}
+        {props.area.upgrades.length > 0 ? (
+          <AreaDetail>
+            Item upgrade
+            {props.area.upgrades.map((level) => {
+              return <div>{level}</div>;
+            })}
+          </AreaDetail>
+        ) : null}
+        {props.area.enemies.length > 0 ? (
+          <AreaDetail>
+            Enemies to kill
+            {props.area.enemies.map((level) => {
+              return <div>{level}</div>;
+            })}
+          </AreaDetail>
+        ) : null}
+        {props.area.tips.length > 0 ? (
+          <AreaDetail>
+            Tips
+            {props.area.tips.map((level) => {
+              return <div>{level}</div>;
+            })}
+          </AreaDetail>
+        ) : null}
+      </AreaInfo>
     </AreaCardStyle>
   );
 };

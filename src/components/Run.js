@@ -31,6 +31,15 @@ const Run = (props) => {
     }
     setSelectedSplit(e.target.textContent);
   };
+  const scrollLeft = (e) => {
+    document.querySelector('.areaContainer').scrollLeft += 400;
+  };
+  const scrollRight = (e) => {
+    document.querySelector('.areaContainer').scrollLeft -= 400;
+  };
+
+  let previous = '<<';
+  let next = '>>';
 
   if (run.id === undefined) {
     return null;
@@ -53,11 +62,14 @@ const Run = (props) => {
               )
             )}
           </DefaultSplits>
+
           <AreaContainer className='areaContainer'>
             {areas.map((area) => {
               return <AreaCard key={area.id} area={area} />;
             })}
           </AreaContainer>
+          <div onClick={scrollRight}>Previous</div>
+          <div onClick={scrollLeft}>Next</div>
         </RunContainer>
       </Content>
     );
