@@ -3,54 +3,77 @@ import {
   AreaCardStyle,
   AreaDetail,
   AreaInfo,
-  AreaName,
+  AreaTips,
+  AreaHeader,
+  PreviousButton,
+  NextButton,
 } from '../styled-components/RunPageStyle';
 
 const AreaCard = (props) => {
+  const area = props.area;
+
+  let previous = '<<';
+  let next = '>>';
+
+  const scrollLeft = (e) => {
+    document.querySelector('.areaContainer').scrollLeft -= 400;
+  };
+  const scrollRight = (e) => {
+    document.querySelector('.areaContainer').scrollLeft += 400;
+  };
   return (
     <AreaCardStyle>
-      <AreaName>{props.area.name}</AreaName>
+      <AreaHeader>
+        {props.page > 1 ? (
+          <PreviousButton onClick={scrollLeft}>{previous}</PreviousButton>
+        ) : null}
+
+        {area.name}
+        {props.page < props.pages ? (
+          <NextButton onClick={scrollRight}>{next}</NextButton>
+        ) : null}
+      </AreaHeader>
       <AreaInfo>
-        {props.area.acquiredLevels.length > 0 ? (
+        {area.acquiredLevels.length > 0 ? (
           <AreaDetail>
-            Levels to get
-            {props.area.acquiredLevels.map((level) => {
-              return <div>{level}</div>;
+            <strong>Levels to get</strong>
+            {area.acquiredLevels.map((level) => {
+              return <div key={level + area.id}>{level}</div>;
             })}
           </AreaDetail>
         ) : null}
 
-        {props.area.pickUps.length > 0 ? (
+        {area.pickUps.length > 0 ? (
           <AreaDetail>
-            Items to pick up
-            {props.area.pickUps.map((level) => {
-              return <div>{level}</div>;
+            <strong>Items to pick up</strong>
+            {area.pickUps.map((pickUp) => {
+              return <div key={pickUp + area.id}>{pickUp}</div>;
             })}
           </AreaDetail>
         ) : null}
-        {props.area.upgrades.length > 0 ? (
+        {area.upgrades.length > 0 ? (
           <AreaDetail>
-            Item upgrade
-            {props.area.upgrades.map((level) => {
-              return <div>{level}</div>;
+            <strong>Item upgrade</strong>
+            {area.upgrades.map((upgrade) => {
+              return <div key={upgrade + area.id}>{upgrade}</div>;
             })}
           </AreaDetail>
         ) : null}
-        {props.area.enemies.length > 0 ? (
+        {area.enemies.length > 0 ? (
           <AreaDetail>
-            Enemies to kill
-            {props.area.enemies.map((level) => {
-              return <div>{level}</div>;
+            <strong>Enemies to kill</strong>
+            {area.enemies.map((enemy) => {
+              return <div key={enemy + area.id}>{enemy}</div>;
             })}
           </AreaDetail>
         ) : null}
-        {props.area.tips.length > 0 ? (
-          <AreaDetail>
-            Tips
-            {props.area.tips.map((level) => {
-              return <div>{level}</div>;
+        {area.tips.length > 0 ? (
+          <AreaTips>
+            <strong>Tips</strong>
+            {area.tips.map((tip) => {
+              return <div key={tip + area.id}>{tip}</div>;
             })}
-          </AreaDetail>
+          </AreaTips>
         ) : null}
       </AreaInfo>
     </AreaCardStyle>
