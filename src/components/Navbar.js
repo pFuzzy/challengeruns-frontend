@@ -2,33 +2,33 @@ import React from 'react';
 import {
   Title,
   Header,
-  Navleft,
-  Navright,
-  Navbutton,
+  NavLeft,
+  NavRight,
+  NavButton,
 } from '../styled-components/Header';
 
 const Navbar = () => {
   return (
     <Header>
-      <Navleft>
-        <Navbutton to='/news' draggable={false}>
+      <NavLeft>
+        <NavButton to='/news' draggable={false}>
           News
-        </Navbutton>
-        <Navbutton to='/forum' draggable={false}>
+        </NavButton>
+        <NavButton to='/forum' draggable={false}>
           Forum
-        </Navbutton>
-      </Navleft>
+        </NavButton>
+      </NavLeft>
       <Title to='/' draggable={false}>
         ChallengeRuns
       </Title>
-      <Navright>
-        <Navbutton to='/register' draggable={false}>
+      <NavRight>
+        <NavButton to='/register' draggable={false}>
           Register
-        </Navbutton>
-        <Navbutton to='/login' draggable={false}>
+        </NavButton>
+        <NavButton to='/login' draggable={false}>
           Sign in
-        </Navbutton>
-      </Navright>
+        </NavButton>
+      </NavRight>
     </Header>
   );
 };

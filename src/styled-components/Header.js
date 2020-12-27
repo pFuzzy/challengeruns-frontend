@@ -14,7 +14,7 @@ export const Title = styled(Link)`
   margin-top: 5vh;
   left: 35.5vw;
   width: 29vw;
-  height: 70px;
+  height: 3.75vh;
   text-align: center;
   font-size: 10vh;
   font-style: italic;
@@ -25,13 +25,13 @@ export const Title = styled(Link)`
   }
 `;
 
-export const Navleft = styled.div`
+export const NavLeft = styled.div`
   position: absolute;
   width: 20vw;
   display: flex;
 `;
 
-export const Navright = styled.div`
+export const NavRight = styled.div`
   position: absolute;
   right: 0;
   width: 20vw;
@@ -39,14 +39,14 @@ export const Navright = styled.div`
   display: flex;
 `;
 
-export const Navbutton = styled(Link)`
+export const NavButton = styled(Link)`
   text-decoration: none;
   text-align: center;
   font-size: 4vh;
   margin-left: 1.5vw;
   margin-right: 1.5vw;
   width: 7vw;
-  height: 35px;
+  height: 1.8vh;
   margin-top: 8vh;
   font-style: italic;
   font-weight: bold;
