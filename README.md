@@ -19,3 +19,5 @@ This repository contains the frontend of the project.
 - styled-components
 - axios 
 - react-media-player
+- HTML
+- CSS
