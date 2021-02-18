@@ -7,7 +7,7 @@ import { useCookies } from 'react-cookie';
 
 const Login = () => {
   const [tokenData, setTokenData] = useState('');
-  const [cookies, setCookie] = useCookies([]);
+  const [cookies, setCookie] = useCookies(['token', 'username']);
 
   const LoginForm = styled.form`
     width: 50%;

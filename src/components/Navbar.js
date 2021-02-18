@@ -9,7 +9,8 @@ import {
 } from '../styled-components/Header';
 
 const Navbar = () => {
-  const [cookies, removeCookie] = useCookies(['username']);
+  const [cookies] = useCookies(['username', 'token']);
+
   return (
     <Header>
       <NavLeft>
@@ -24,7 +25,7 @@ const Navbar = () => {
         ChallengeRuns
       </Title>
       <NavRight>
-        {cookies.username ? (
+        {cookies.username && cookies.username !== 'undefined' ? (
           <NavButton to='/profile' draggable={false}>
             {cookies.username}
           </NavButton>
@@ -33,8 +34,8 @@ const Navbar = () => {
             Register
           </NavButton>
         )}
-        {cookies.username ? (
-          <NavButton to='/logout' removeCookie={removeCookie} draggable={false}>
+        {cookies.username && cookies.username !== 'undefined' ? (
+          <NavButton to='/logout' draggable={false}>
             Log out
           </NavButton>
         ) : (

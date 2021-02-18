@@ -8,6 +8,7 @@ import Game from './components/Game';
 import Run from './components/Run';
 import Register from './components/Register';
 import Login from './components/Login';
+import Logout from './components/Logout';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
       </Route>
       <Route exact path='/login'>
         <Login />
+      </Route>
+      <Route exact path='/logout'>
+        <Logout />
       </Route>
       <Route exact path='/games/:gameId' component={Game} />
       <Route exact path='/games/:gameId/:runId' component={Run} />
