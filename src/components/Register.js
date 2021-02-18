@@ -63,7 +63,7 @@ const Register = () => {
         <br />
         <button type='submit'>Submit</button>
       </RegisterForm>
-      <div>{status}</div>
+      {status === '' ? null : <div>{status}</div>}
     </Content>
   );
 };
