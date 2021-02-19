@@ -1,10 +1,21 @@
 import React, { useState } from 'react';
 import { Content } from '../styled-components/ContentStyle';
-import styled from 'styled-components';
 import { postWithoutToken } from '../service/DataFetcher';
+import {
+  StyledLabel,
+  StyledForm,
+  StyledInput,
+  StyledFormButton,
+} from '../styled-components/FormStyle';
+import { useHistory } from 'react-router-dom';
 
 const Register = () => {
   const [fetchData, setFetchData] = useState('');
+  const history = useHistory();
+
+  const backToMainPage = () => {
+    history.push('/');
+  };
 
   const register = (e) => {
     e.preventDefault();
@@ -15,19 +26,11 @@ const Register = () => {
     postWithoutToken('register', postData, setFetchData);
   };
 
-  const RegisterForm = styled.form`
-    width: 50%;
-    margin: auto;
-    margin-top: 5vh;
-    text-align: center;
-    border: 1px solid black;
-  `;
-
   return (
     <Content>
-      <RegisterForm onSubmit={register}>
-        <label htmlFor='email'>E-mail: </label>
-        <input
+      <StyledForm onSubmit={register}>
+        <StyledLabel htmlFor='email'>E-mail: </StyledLabel>
+        <StyledInput
           type='email'
           name='email'
           id='email'
@@ -36,8 +39,8 @@ const Register = () => {
           placeholder='e-mail'
         />
         <br />
-        <label htmlFor='username'>Username: </label>
-        <input
+        <StyledLabel htmlFor='username'>Username: </StyledLabel>
+        <StyledInput
           type='text'
           name='username'
           id='username'
@@ -48,8 +51,8 @@ const Register = () => {
           placeholder='username'
         />
         <br />
-        <label htmlFor='password'>Password: </label>
-        <input
+        <StyledLabel htmlFor='password'>Password: </StyledLabel>
+        <StyledInput
           type='password'
           name='password'
           id='password'
@@ -59,8 +62,11 @@ const Register = () => {
           placeholder='password'
         />
         <br />
-        <button type='submit'>Submit</button>
-      </RegisterForm>
+        <StyledFormButton type='submit'>Register</StyledFormButton>
+        <StyledFormButton type='button' onClick={backToMainPage}>
+          Cancel
+        </StyledFormButton>
+      </StyledForm>
       {fetchData === '' ? null : <div>{fetchData}</div>}
     </Content>
   );

@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
 import { Content } from '../styled-components/ContentStyle';
-import styled from 'styled-components';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
+import {
+  StyledForm,
+  StyledFormButton,
+  StyledInput,
+  StyledLabel,
+} from '../styled-components/FormStyle';
 
 const Login = () => {
   const [tokenData, setTokenData] = useState('');
   const [cookies, setCookie] = useCookies(['token', 'username']);
 
-  const LoginForm = styled.form`
-    width: 50%;
-    margin: auto;
-    margin-top: 5vh;
-    text-align: center;
-    border: 1px solid black;
-  `;
   const login = (e) => {
     e.preventDefault();
     let username = document.getElementById('username').value;
@@ -33,8 +31,9 @@ const Login = () => {
   } else {
     return (
       <Content>
-        <LoginForm onSubmit={login}>
-          <input
+        <StyledForm onSubmit={login}>
+          <StyledLabel htmlFor='username'>Username: </StyledLabel>
+          <StyledInput
             type='text'
             name='username'
             id='username'
@@ -45,7 +44,8 @@ const Login = () => {
             placeholder='username'
           />
           <br />
-          <input
+          <StyledLabel htmlFor='password'>Password: </StyledLabel>
+          <StyledInput
             type='password'
             name='password'
             id='password'
@@ -55,11 +55,11 @@ const Login = () => {
             placeholder='password'
           />
           <br />
-          <button type='submit'>Sign in</button>
+          <StyledFormButton type='submit'>Sign in</StyledFormButton>
           {tokenData.status === 'Invalid username or password!' ? (
             <div>{tokenData.status}</div>
           ) : null}
-        </LoginForm>
+        </StyledForm>
       </Content>
     );
   }
