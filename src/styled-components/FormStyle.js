@@ -18,3 +18,5 @@ export const StyledLabel = styled.label`
 export const StyledInput = styled.input``;
 
 export const StyledFormButton = styled.button``;
+
+export const StyledStatusMessage = styled.div``;

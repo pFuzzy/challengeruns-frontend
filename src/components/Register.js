@@ -6,6 +6,7 @@ import {
   StyledForm,
   StyledInput,
   StyledFormButton,
+  StyledStatusMessage,
 } from '../styled-components/FormStyle';
 import { useHistory } from 'react-router-dom';
 
@@ -66,8 +67,10 @@ const Register = () => {
         <StyledFormButton type='button' onClick={backToMainPage}>
           Cancel
         </StyledFormButton>
+        {fetchData === '' ? null : (
+          <StyledStatusMessage>{fetchData}</StyledStatusMessage>
+        )}
       </StyledForm>
-      {fetchData === '' ? null : <div>{fetchData}</div>}
     </Content>
   );
 };

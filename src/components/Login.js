@@ -8,6 +8,7 @@ import {
   StyledFormButton,
   StyledInput,
   StyledLabel,
+  StyledStatusMessage,
 } from '../styled-components/FormStyle';
 
 const Login = () => {
@@ -57,7 +58,7 @@ const Login = () => {
           <br />
           <StyledFormButton type='submit'>Sign in</StyledFormButton>
           {tokenData.status === 'Invalid username or password!' ? (
-            <div>{tokenData.status}</div>
+            <StyledStatusMessage>{tokenData.status}</StyledStatusMessage>
           ) : null}
         </StyledForm>
       </Content>
