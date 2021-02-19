@@ -44,7 +44,9 @@ export const RunContainer = styled.div`
   height: auto;
 `;
 
-export const AreaCardStyle = styled.div``;
+export const AreaCardStyle = styled.div`
+  user-select: none;
+`;
 
 export const AreaHeader = styled.div`
   width: 400px;
