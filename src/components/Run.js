@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Content } from '../styled-components/ContentStyle';
-import axios from 'axios';
 import { BackButton, GameTitle } from '../styled-components/GamePageStyle';
 import {
   DefaultSplits,
@@ -10,6 +9,7 @@ import {
   RunContainer,
 } from '../styled-components/RunPageStyle';
 import AreaCard from './AreaCard';
+import { getWithoutToken } from '../service/DataFetcher';
 
 const Run = (props) => {
   const [run, setRun] = useState({});
@@ -19,9 +19,7 @@ const Run = (props) => {
   let page = 0;
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8080/runs/${runId}`)
-      .then((res) => setRun(res.data));
+    getWithoutToken(`runs/${runId}`, setRun);
   }, [runId, selectedSplit]);
 
   const selectSplit = (e) => {
