@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Content, Footer } from '../styled-components/ContentStyle';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {
   BackButton,
@@ -9,6 +8,7 @@ import {
   StyledSelect,
   RunListHeader,
 } from '../styled-components/GamePageStyle';
+import { getWithoutToken } from '../service/DataFetcher';
 
 const Game = (props) => {
   const [game, setGame] = useState({});
@@ -22,9 +22,7 @@ const Game = (props) => {
   };
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8080/games/${gameId}`)
-      .then((res) => setGame(res.data));
+    getWithoutToken(`games/${gameId}`, setGame);
   }, [gameId, category]);
 
   if (game.id === undefined) {
