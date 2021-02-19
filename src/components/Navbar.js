@@ -6,7 +6,7 @@ import {
   NavLeft,
   NavRight,
   NavButton,
-} from '../styled-components/Header';
+} from '../styled-components/HeaderStyle';
 
 const Navbar = () => {
   const [cookies] = useCookies(['username', 'token']);

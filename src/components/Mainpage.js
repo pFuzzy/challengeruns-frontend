@@ -1,5 +1,5 @@
 import React from 'react';
-import { Content } from '../styled-components/Content';
+import { Content } from '../styled-components/ContentStyle';
 import ContentNavbar from './ContentNavbar';
 
 const Mainpage = () => {

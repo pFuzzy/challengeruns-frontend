@@ -1,40 +1,38 @@
 import React, { useState } from 'react';
-import { Content } from '../styled-components/Content';
-import styled from 'styled-components';
-import axios from 'axios';
+import { Content } from '../styled-components/ContentStyle';
 import { Redirect } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
+import {
+  StyledForm,
+  StyledFormButton,
+  StyledInput,
+  StyledLabel,
+  StyledStatusMessage,
+} from '../styled-components/FormStyle';
+import { postWithoutToken } from '../service/DataFetcher';
 
 const Login = () => {
-  const [tokenData, setTokenData] = useState('');
+  const [fetchData, setFetchData] = useState('');
   const [cookies, setCookie] = useCookies(['token', 'username']);
 
-  const LoginForm = styled.form`
-    width: 50%;
-    margin: auto;
-    margin-top: 5vh;
-    text-align: center;
-    border: 1px solid black;
-  `;
   const login = (e) => {
     e.preventDefault();
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
     let postData = { username: username, password: password };
-    axios.post('http://localhost:8080/login', postData).then((res) => {
-      setTokenData(res.data);
-    });
+    postWithoutToken('login', postData, setFetchData);
   };
 
-  if (tokenData.status === 'Login successful!') {
-    setCookie('token', tokenData.token);
-    setCookie('username', tokenData.username);
+  if (fetchData.status === 'Login successful!') {
+    setCookie('token', fetchData.token);
+    setCookie('username', fetchData.username);
     return <Redirect to='/' />;
   } else {
     return (
       <Content>
-        <LoginForm onSubmit={login}>
-          <input
+        <StyledForm onSubmit={login}>
+          <StyledLabel htmlFor='username'>Username: </StyledLabel>
+          <StyledInput
             type='text'
             name='username'
             id='username'
@@ -45,7 +43,8 @@ const Login = () => {
             placeholder='username'
           />
           <br />
-          <input
+          <StyledLabel htmlFor='password'>Password: </StyledLabel>
+          <StyledInput
             type='password'
             name='password'
             id='password'
@@ -55,11 +54,11 @@ const Login = () => {
             placeholder='password'
           />
           <br />
-          <button type='submit'>Sign in</button>
-          {tokenData.status === 'Invalid username or password!' ? (
-            <div>{tokenData.status}</div>
+          <StyledFormButton type='submit'>Sign in</StyledFormButton>
+          {fetchData.status === 'Invalid username or password!' ? (
+            <StyledStatusMessage>{fetchData.status}</StyledStatusMessage>
           ) : null}
-        </LoginForm>
+        </StyledForm>
       </Content>
     );
   }
