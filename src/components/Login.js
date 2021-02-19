@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Content } from '../styled-components/ContentStyle';
-import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import {
@@ -10,9 +9,10 @@ import {
   StyledLabel,
   StyledStatusMessage,
 } from '../styled-components/FormStyle';
+import { postWithoutToken } from '../service/DataFetcher';
 
 const Login = () => {
-  const [tokenData, setTokenData] = useState('');
+  const [fetchData, setFetchData] = useState('');
   const [cookies, setCookie] = useCookies(['token', 'username']);
 
   const login = (e) => {
@@ -20,14 +20,12 @@ const Login = () => {
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
     let postData = { username: username, password: password };
-    axios.post('http://localhost:8080/login', postData).then((res) => {
-      setTokenData(res.data);
-    });
+    postWithoutToken('login', postData, setFetchData);
   };
 
-  if (tokenData.status === 'Login successful!') {
-    setCookie('token', tokenData.token);
-    setCookie('username', tokenData.username);
+  if (fetchData.status === 'Login successful!') {
+    setCookie('token', fetchData.token);
+    setCookie('username', fetchData.username);
     return <Redirect to='/' />;
   } else {
     return (
@@ -57,8 +55,8 @@ const Login = () => {
           />
           <br />
           <StyledFormButton type='submit'>Sign in</StyledFormButton>
-          {tokenData.status === 'Invalid username or password!' ? (
-            <StyledStatusMessage>{tokenData.status}</StyledStatusMessage>
+          {fetchData.status === 'Invalid username or password!' ? (
+            <StyledStatusMessage>{fetchData.status}</StyledStatusMessage>
           ) : null}
         </StyledForm>
       </Content>
