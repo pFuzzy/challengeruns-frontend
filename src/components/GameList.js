@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Content, Footer, GameLink } from '../styled-components/ContentStyle';
 import ContentNavbar from './ContentNavbar';
-import axios from 'axios';
+import { getWithoutToken } from '../service/DataFetcher';
 
 const Games = () => {
   const [games, setGames] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:8080/games').then((res) => {
-      setGames(res.data);
-    });
+    getWithoutToken('games', setGames);
   }, []);
 
   return (
