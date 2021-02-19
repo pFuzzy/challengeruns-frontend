@@ -3,7 +3,7 @@ import {
   ContentButton,
   SelectedContent,
   StyledContentNav,
-} from '../styled-components/Content';
+} from '../styled-components/ContentStyle';
 
 const Contentnavbar = () => {
   const currentUrl = window.location.href.split('/');

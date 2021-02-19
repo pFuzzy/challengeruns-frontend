@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Content, Footer, GameLink } from '../styled-components/Content';
+import { Content, Footer, GameLink } from '../styled-components/ContentStyle';
 import ContentNavbar from './ContentNavbar';
 import axios from 'axios';
 

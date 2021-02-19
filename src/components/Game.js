@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Content, Footer } from '../styled-components/Content';
+import { Content, Footer } from '../styled-components/ContentStyle';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {
@@ -8,7 +8,7 @@ import {
   StyledOption,
   StyledSelect,
   RunListHeader,
-} from '../styled-components/GamePage';
+} from '../styled-components/GamePageStyle';
 
 const Game = (props) => {
   const [game, setGame] = useState({});

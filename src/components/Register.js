@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Content } from '../styled-components/Content';
+import { Content } from '../styled-components/ContentStyle';
 import axios from 'axios';
 import styled from 'styled-components';
 
