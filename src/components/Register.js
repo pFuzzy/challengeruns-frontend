@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Content } from '../styled-components/ContentStyle';
-import axios from 'axios';
 import styled from 'styled-components';
+import { postWithoutToken } from '../service/DataFetcher';
 
 const Register = () => {
-  const [status, setStatus] = useState('');
+  const [fetchData, setFetchData] = useState('');
 
   const register = (e) => {
     e.preventDefault();
@@ -12,9 +12,7 @@ const Register = () => {
     let password = document.getElementById('password').value;
     let email = document.getElementById('email').value;
     let postData = { username: username, password: password, email: email };
-    axios.post('http://localhost:8080/register', postData).then((res) => {
-      setStatus(res.data);
-    });
+    postWithoutToken('register', postData, setFetchData);
   };
 
   const RegisterForm = styled.form`
@@ -63,7 +61,7 @@ const Register = () => {
         <br />
         <button type='submit'>Submit</button>
       </RegisterForm>
-      {status === '' ? null : <div>{status}</div>}
+      {fetchData === '' ? null : <div>{fetchData}</div>}
     </Content>
   );
 };
